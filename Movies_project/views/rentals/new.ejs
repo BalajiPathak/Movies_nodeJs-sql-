@@ -1,0 +1,45 @@
+<%- include('../includes/head.ejs') %>
+<body class="bg-gray-100">
+    <%- include('../includes/navigation.ejs') %>
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">New Rental</h2>
+            <form action="/newRental" method="POST">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="customerId">
+                        Customer
+                    </label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="customerId"
+                        name="customerId"
+                        required>
+                        <option value="">Select Customer</option>
+                        <% customers.forEach(customer => { %>
+                            <option value="<%= customer.id %>"><%= customer.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="movieId">
+                        Movie
+                    </label>
+                    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="movieId"
+                        name="movieId"
+                        required>
+                        <option value="">Select Movie</option>
+                        <% movies.forEach(movie => { %>
+                            <option value="<%= movie.id %>"><%= movie.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-rose-500 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                        type="submit">
+                        Create Rental
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>

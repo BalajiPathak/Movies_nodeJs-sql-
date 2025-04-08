@@ -1,0 +1,22 @@
+<nav class="bg-rose-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-white text-xl font-bold hover:text-blue-300">Vidly</a>
+                </div>
+                <div class="md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/newRental" class="text-white hover:text-blue-300 px-3 py-2 text-sm font-medium <%= path === '/newRental' ? 'border-b-2 border-white' : '' %>">
+                            New Rental
+                        </a>
+                        <a href="/customers"
+                            class="text-white hover:text-blue-300 px-3 py-2  text-sm font-medium <%= path === '/customers' ? 'border-b-2 border-white' : '' %>">Customers</a>
+                        <a href="/movies"
+                            class="text-white hover:text-blue-300 px-3 py-2  text-sm font-medium <%= path === '/movies' ? 'border-b-2 border-white' : '' %>">Movies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
